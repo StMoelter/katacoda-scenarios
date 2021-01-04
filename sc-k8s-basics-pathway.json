@@ -1,5 +1,11 @@
 {
   "title": "Kubernetes Basics",
   "description": "Basis Kubernetes Kurs für sum.cumo",
-  "courses": []
+  "courses": [
+    {
+      "course_id": "create-pod",
+      "title": "Erstelle einen Pod in Kubernetes",
+      "description": "Einen Pod mithilfe von kubectl und einer .yaml Datei erstellen."
+    }
+  ]
 }
