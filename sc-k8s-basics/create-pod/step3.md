@@ -18,9 +18,12 @@ Die yaml Datei wird benutzt um den Pod zu starten:
 Der erste unterschied ist, das wir ein **apply** mit der Datei ausführen. Das es sich um einen Pod handelt ist in der Datei definiert. Über das **apply** lässt sich also beliebige Resourcen starten oder ändern. Eine Konfigurationsdatei kann beliebig viele Resourcen definieren.   
 
 Wie auch im letzten Beispiel kann man jetzt die gleichen Aktionen ausführen:   
-`kubectl get pods`{{execute}}   
-`kubectl describe pod mysecondpod`{{execute}}    
+`kubectl get pods`{{execute}}  
+    
+`kubectl describe pod mysecondpod`{{execute}}   
+     
 `kubectl describe pod mysecondpod | grep State`{{execute}}      
+
  `kubectl describe pod mysecondpod | grep IP`{{execute}}    
 
    
