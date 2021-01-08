@@ -21,7 +21,9 @@ Falls das nicht der Fall ist, einfach mal ganz unten in der kompletten Ausgabe u
     
 Wenn der Pod aktiv ausgeführt wird, dann hat er eine IP-Adresse zugewiesen bekommen, welche man auch beim **describe pod** findet:   
  `kubectl describe pod myfirstpod | grep IP`{{execute}}    
- Die IP Adresse kann man kopieren und darauf mal ein **ping**, **curl** oder **lynx** ausprobieren.   
+ Die IP Adresse kann man kopieren und darauf mal ein **ping**, **curl** oder **lynx** ausprobieren.  
+
+ ## Befehl in Pod ausführen 
 
 ## yaml Ausgabe der Konfiguration
 Die Ausgabe der Pod Konfiguration kann man sich auch als yaml Datei Ausgeben lassen:  
