@@ -4,7 +4,7 @@ Das Kubernetes Cluster muss als erstes gestartet werden:
 
 ## Deployment yaml erstellen
 Als erstes wird das Deployment erstellt:   
-<pre class="file" data-filename="app.js" data-target="replace">
+<pre class="file" data-filename="deployment.yaml" data-target="replace">
 apiVersion: apps/v1
 kind: Deployment
 metadata:
