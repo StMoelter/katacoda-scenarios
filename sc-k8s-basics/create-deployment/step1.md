@@ -6,7 +6,7 @@ Das Kubernetes Cluster muss als erstes gestartet werden:
 `kubectl explain deployment`{{execute}}
 
 ## Deployment yaml erstellen
-Als erstes wird das Deployment erstellt:   
+Als Erstes wird das Deployment erstellt:   
 <pre class="file" data-filename="deployment.yaml" data-target="replace">
 apiVersion: apps/v1
 kind: Deployment
@@ -27,9 +27,13 @@ spec:
       containers:
       - name: nginx
         image: stmoelter/create-deployment-demo-nginx
-</pre>   
+</pre>  
+
+## Deployment starten
 Das Deployment wird aktiviert mit:   
-`kubectl apply -f deployment.yaml`{{execute}}   
+`kubectl apply -f deployment.yaml`{{execute}}  
+
+## Übersicht
 Eine Übersicht über die Deployments erhält man mit:   
 `kubectl get deployments`{{execute}}   
 Details des Deployments zeigt:   
@@ -42,7 +46,7 @@ Man kann jetzt auf den Server zugreifen mit:
 Die Anzahl der laufenden Pods lässt sich mit:   
 `k scale deployment myfirstdeployment --replicas=5`{{execute}}   
 ändern.
- 
+
 
 
 
