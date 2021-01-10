@@ -6,6 +6,11 @@
       "course_id": "create-pod",
       "title": "Erstelle einen Pod in Kubernetes",
       "description": "Einen Pod mithilfe von kubectl und einer .yaml Datei erstellen."
+    }, {
+      "course_id": "create-deployment",
+      "title": "Erstelle ein Deployment in Kubernetes",
+      "description": "Ein Deployment mithilfe erstellen und ein Service Anschließen"
     }
+
   ]
 }
