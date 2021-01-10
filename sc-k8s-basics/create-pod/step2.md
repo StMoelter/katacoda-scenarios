@@ -24,6 +24,14 @@ Wenn der Pod aktiv ausgeführt wird, dann hat er eine IP-Adresse zugewiesen beko
  Die IP Adresse kann man kopieren und darauf mal ein **ping**, **curl** oder **lynx** ausprobieren.  
 
  ## Befehl in Pod ausführen 
+ Wie auch bei docker kann man einen zusätzlichen Befehl in einem Pod ausführen lassen:   
+ `kubectl execute -it myfirstpod -- sh`{{execute}}   
+ Sollten sich mehrere Container in einem Pod befinden, so muss mit dem **--container** Parameter der gewünschte COntainer ausgewählt werden.
+
+ ## Logging
+ Die Log-Ausgabe kann sieht man mit:   
+ `kubectl logs myfirstpod`{{execute}}   
+ eine permanente Ausgabe, wie man sie von `tail -f` gewöhnt ist erhält man auch hier mit dem **-f** Parameter. 
 
 ## yaml Ausgabe der Konfiguration
 Die Ausgabe der Pod Konfiguration kann man sich auch als yaml Datei Ausgeben lassen:  
