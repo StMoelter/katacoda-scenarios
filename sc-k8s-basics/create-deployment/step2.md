@@ -19,3 +19,8 @@ spec:
 
 ## Service starten
 `kubectl apply -f service.yaml`{{execute}}
+
+## Status
+`kubectl get services`{{execute}}   
+## Auf Service zugreifen
+`k describe services myservice | grep IP`

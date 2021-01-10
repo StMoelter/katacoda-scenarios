@@ -29,6 +29,15 @@ spec:
         image: stmoelter/create-deployment-demo-nginx
 </pre>  
 
+## Starten
+`kubectl apply -f service.yaml`{{execute}}   
+
+## Status anzeigen
+`kubectl get services`{{execute}}   
+`kubectl describe service myservice`{{execute}}   
+
+
+
 ## Deployment starten
 Das Deployment wird aktiviert mit:   
 `kubectl apply -f deployment.yaml`{{execute}}  
@@ -45,7 +54,12 @@ Man kann jetzt auf den Server zugreifen mit:
 ## Skalieren auf der Kommandozeile
 Die Anzahl der laufenden Pods lässt sich mit:   
 `k scale deployment myfirstdeployment --replicas=5`{{execute}}   
-ändern.
+ändern.   
+Hier haben wir jetzt 5 Pods:   
+`kubectl get pods`{{execute}}   
+auch hier werden 5 Instanzen angezeigt:   
+`kubectl describe deployment myfirstdeployment`{{execute}}   
+
 
 
 
