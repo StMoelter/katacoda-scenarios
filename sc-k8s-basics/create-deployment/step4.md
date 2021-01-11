@@ -1,4 +1,11 @@
+## Secret in Deployment einbinden
 <pre class="file" data-filename="deployment.yaml" data-target="replace">
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirstdeployment
+  labels:
+    app: app-deployment-label
 spec:
   replicas: 3
   selector:
@@ -21,3 +28,6 @@ spec:
         secret:
           secretName: mysecret
 </pre>
+
+## Starten
+`kubectl apply -f deployment.yaml`

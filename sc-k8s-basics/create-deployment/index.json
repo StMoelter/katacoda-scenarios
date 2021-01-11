@@ -18,8 +18,11 @@
         "text": "step3.md"
       },
       {
-        "title": "Resourcen löschen",
+        "title": "Secret einbinden",
         "text": "step4.md"
+      },{
+        "title": "Resourcen löschen",
+        "text": "step5.md"
       }
     ],
     "intro": {

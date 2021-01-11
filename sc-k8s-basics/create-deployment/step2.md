@@ -18,9 +18,18 @@ spec:
 </pre>   
 
 ## Service starten
+Das starten des Services erfolgt analog zu den anderen Resourcen:   
 `kubectl apply -f service.yaml`{{execute}}
 
 ## Status
+Einen Überblick über die Services zeigt:   
 `kubectl get services`{{execute}}   
+Die detailierte Ansicht des Services findet sich mit:
+`kubectl describe service myservice`{{execute}}   
 ## Auf Service zugreifen
-`k describe services myservice | grep IP`
+Die IP Adresse findet sich im der Beschreibung des Service:   
+`kubectl describe services myservice | grep IP`{{execute}}   
+über diese Adresse kann auf die Pods zugegriffen werden.
+
+## DNS
+-> TBD katacoda DNS funktioniert nicht wie beschrieben.

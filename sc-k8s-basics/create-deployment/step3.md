@@ -1,7 +1,7 @@
-## ConfigMap Dokumentation
-`kubectl explain configmap`{{execute}}
+## Secret Dokumentation
+`kubectl explain secret`{{execute}}
 
-## Service yaml erstellen
+## Secret yaml erstellen
 <pre class="file" data-filename="secret.yaml" data-target="replace">
 apiVersion: v1
 kind: Secret
@@ -9,5 +9,14 @@ metadata:
   name: mysecret
 type: Opaque
 data:
-  .htpasswd: dXNlcjE6JGFwcjEkaG5MYWpObXIkLjFUcU5pL0dObWpmLzhEbkx4ZGxHMAo=
+  .htpasswd: vdXNlcjE6JGFwcjEkaG5MYWpObXIkLjFUcU5pL0dObWpmLzhEbkx4ZGxHMAo=
 </pre>   
+
+## Starten
+`kubectl apply -f secret.yaml`{{execute}}
+
+## Beschreiben
+`kubectl get services`{{execute}}   
+   
+`kubectl describe service myservice`{{execute}}   
+   

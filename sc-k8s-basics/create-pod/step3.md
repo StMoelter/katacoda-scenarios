@@ -1,5 +1,5 @@
 ## Pod über yaml Datei starten
-Die Konfiguration für einen Pod speichert man zur Reproduzierbarkeit in einer Datei. z.B.:   
+Die Konfiguration für einen Pod werden zur Reproduzierbarkeit in einer Datei gespeichert. z.B.:   
 ```
 cat << EOF > pod.yaml
 apiVersion: v1
@@ -12,10 +12,11 @@ spec:
   - name: nginx
     image: nginx
 EOF
-```{{execute}}
+```{{execute}}   
+    
 Die yaml Datei wird benutzt um den Pod zu starten:   
 `kubectl apply -f pod.yaml`{{execute}}   
-Der erste unterschied ist, das wir ein **apply** mit der Datei ausführen. Das es sich um einen Pod handelt ist in der Datei definiert. Über das **apply** lässt sich also beliebige Resourcen starten oder ändern. Eine Konfigurationsdatei kann beliebig viele Resourcen definieren.   
+Der erste Unterschied ist, dass hier ein **apply** mit der Datei ausgeführt wird. Das es sich um einen Pod handelt ist in der Datei definiert. Über das **apply** lassen sich also beliebige Resourcen starten oder ändern. Eine Konfigurationsdatei kann beliebig viele Resourcen definieren.   
 
 Wie auch im letzten Beispiel kann man jetzt die gleichen Aktionen ausführen:   
       
