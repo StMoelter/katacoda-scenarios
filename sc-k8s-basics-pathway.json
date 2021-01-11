@@ -9,7 +9,7 @@
     }, {
       "course_id": "create-deployment",
       "title": "Erstelle ein Deployment in Kubernetes",
-      "description": "Ein Deployment mithilfe erstellen und ein Service Anschließen"
+      "description": "Ein Deployment mithilfe erstellen und ein Service sowie ein Secret einbinden"
     }
 
   ]

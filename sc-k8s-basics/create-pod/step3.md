@@ -6,7 +6,6 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: mysecondpod
-  namespace: default
 spec:
   containers:
   - name: nginx

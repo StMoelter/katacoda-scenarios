@@ -25,7 +25,7 @@ Wenn der Pod aktiv ausgeführt wird, dann hat er eine IP-Adresse zugewiesen beko
 
  ## Befehl in Pod ausführen 
  Wie auch bei Docker kann ein zusätzlichen Befehl in einem Pod ausgeführt werden:   
- `kubectl execute -it myfirstpod -- sh`{{execute}}   
+ `kubectl exec -it myfirstpod -- sh`{{execute}}   
  Sollten sich mehrere Container in einem Pod befinden, so muss mit dem **--container** Parameter der gewünschte Containers gewählt werden.
 
  ## Logging
