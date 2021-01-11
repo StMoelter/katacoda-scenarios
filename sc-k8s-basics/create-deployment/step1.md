@@ -30,13 +30,11 @@ spec:
 </pre>  
 
 ## Starten
-`kubectl apply -f service.yaml`{{execute}}   
+`kubectl apply -f deployment.yaml`{{execute}}   
 
 ## Status anzeigen
-`kubectl get services`{{execute}}   
-`kubectl describe service myservice`{{execute}}   
-
-
+`kubectl get deployment`{{execute}}   
+`kubectl describe service deployment`{{execute}}   
 
 ## Deployment starten
 Das Deployment wird aktiviert mit:   

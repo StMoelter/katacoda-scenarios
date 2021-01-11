@@ -1,10 +1,4 @@
 <pre class="file" data-filename="deployment.yaml" data-target="replace">
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: myfirstdeployment
-  labels:
-    app: app-deployment-label
 spec:
   replicas: 3
   selector:
@@ -20,12 +14,10 @@ spec:
         image: stmoelter/create-deployment-demo-nginx
         volumeMounts:
         - name: authvolume
-        mountPath: "/etc/nginx/.htpasswd"
-        readOnly: true
+          mountPath: "/etc/nginx/auth/"
+          readOnly: true
       volumes:
       - name: authvolume
         secret:
           secretName: mysecret
-          items:
-         - key: auth
 </pre>
