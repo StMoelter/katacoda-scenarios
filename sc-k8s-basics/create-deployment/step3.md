@@ -8,6 +8,6 @@ kind: Secret
 metadata:
   name: mysecret
 type: Opaque
-stringData:
-  auth: user1:$apr1$hnLajNmr$.1TqNi/GNmjf/8DnLxdlG0
+data:
+  .htpasswd: dXNlcjE6JGFwcjEkaG5MYWpObXIkLjFUcU5pL0dObWpmLzhEbkx4ZGxHMAo=
 </pre>   
