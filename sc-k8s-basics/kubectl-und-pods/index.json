@@ -1,0 +1,34 @@
+{
+    "title": "kubectl Werkzeuge für Pods",
+    "description": "Hilfreiche kubectl Kommandos für Pods",
+    "difficulty": "Beginner",
+    "time": "5 Minuten",
+    "details": {
+      "steps": [
+        {
+          "title": "Befehle in Pod ausführen",
+          "text": "step1.md"
+        },
+        {
+          "title": "Port in Pod tunneln",
+          "text": "step2.md"
+        },
+        {
+          "title": "Dateien in und aus Pod kopieren",
+          "text": "step3.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "terminal"
+    },
+    "backend": {
+      "imageid": "kubernetes-cluster-running:1.18"
+    }
+  }

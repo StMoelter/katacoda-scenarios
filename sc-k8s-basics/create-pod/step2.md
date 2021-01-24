@@ -23,11 +23,6 @@ Wenn der Pod aktiv ausgeführt wird, dann hat er eine IP-Adresse zugewiesen beko
  `kubectl describe pod myfirstpod | grep IP`{{execute}}    
  Die IP Adresse kann man kopieren und darauf mal ein **ping**, **curl** oder **lynx** ausprobieren.  
 
- ## Befehl in Pod ausführen 
- Wie auch bei Docker kann ein zusätzlichen Befehl in einem Pod ausgeführt werden:   
- `kubectl exec -it myfirstpod -- sh`{{execute}}   
- Sollten sich mehrere Container in einem Pod befinden, so muss mit dem **--container** Parameter der gewünschte Containers gewählt werden.
-
  ## Logging
  Die Log-Ausgabe kann sieht man mit:   
  `kubectl logs myfirstpod`{{execute}}   
@@ -36,7 +31,13 @@ Wenn der Pod aktiv ausgeführt wird, dann hat er eine IP-Adresse zugewiesen beko
 ## yaml Ausgabe der Konfiguration
 Die Ausgabe der Pod Konfiguration kann auch als yaml Datei Ausgeben werden:  
 `kubectl get pod myfirstpod -o=yaml`{{execute}}   
-Das ist ganz praktisch, wenn die Konfiguration eines schnell auf der Konsole erzeugten Pod (Resource) in einer Datei persistieren werden soll, z.B. um diese ins Repo zu überführen.    
+Das ist ganz praktisch, wenn die Konfiguration eines schnell auf der Konsole erzeugten Pod (Resource) in einer Datei persistieren werden soll, z.B. um diese ins Repo zu überführen.  
+
+## json Ausgabe
+Die Ausgabe kann auch als json erfolgen:   
+`kubectl get pod myfirstpod app=db-proxy -o json`{{execute}}  
+Alternativ kann man sich auch nur einen Teil der Json-Ausgabe anzeigen lassen:   
+`kubectl get pod -l app=db-proxy -o jsonpath="{.items[0].metadata.name}"`   
 
 ## Pod löschen
 Wenn der Pod nicht mehr benötigt wird, so kann er mit:   

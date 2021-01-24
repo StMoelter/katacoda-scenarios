@@ -7,6 +7,14 @@
       "title": "Erstelle einen Pod in Kubernetes",
       "description": "Einen Pod mithilfe von kubectl und einer .yaml Datei erstellen."
     }, {
+      "course_id": "kubectl-und-pods",
+      "title": "Hilfreiche Kommandos für Pod",
+      "description": "Befehle in Pods ausführen, Ports tunneln und Dateien kopieren"
+    }, {
+      "course_id": "more-pods",
+      "title": "Erstelle einen Pod in Kubernetes",
+      "description": "Einen Pod mithilfe von kubectl und einer .yaml Datei erstellen."
+    },{
       "course_id": "create-deployment",
       "title": "Erstelle ein Deployment in Kubernetes",
       "description": "Ein Deployment mithilfe erstellen und ein Service sowie ein Secret einbinden"
