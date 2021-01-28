@@ -36,9 +36,15 @@ Das ist ganz praktisch, wenn die Konfiguration eines schnell auf der Konsole erz
 ## json Ausgabe
 Die Ausgabe kann auch als json erfolgen:   
 `kubectl get pod myfirstpod app=db-proxy -o json`{{execute}}  
-Alternativ kann man sich auch nur einen Teil der Json-Ausgabe anzeigen lassen:   
-`kubectl get pod -l app=db-proxy -o jsonpath="{.items[0].metadata.name}"`   
+Alternativ kann man sich auch nur einen Teil der Json-Ausgabe anzeigen lassen:
+`kubectl get pod myfirstpod -o jsonpath="{.metadata.name}"`{{execute}}   
 
+`kubectl get pod myfirstpod -o jsonpath="{.status.podIP}"`{{execute}}   
+
+## Auf Pod IP zugreifen
+Innerhalb des Clusters kann man auf die IP Adresse des Pods zugreifen:   
+`curl $(kubectl get pod myfirstpod -o jsonpath="{.status.podIP})`{{execute}}    
+   
 ## Pod löschen
 Wenn der Pod nicht mehr benötigt wird, so kann er mit:   
 `kubectl delete pod myfirstpod`{{execute}}   

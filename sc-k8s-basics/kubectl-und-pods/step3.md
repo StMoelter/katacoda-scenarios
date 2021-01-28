@@ -6,7 +6,7 @@ Ist die Liste leer den Pod starten mit:
 ## Datei aus Pod kopieren
 Zum kopieren benutzt man das **cp** Kommando. Dazu muss in dem Pod das Programm **tar** installiert sein.   
 Hier wird die index.html aus dem nginx-Pod auf den lokalen Rechner kopiert:  
-`kubectl mypod:/usr/share/nginx/html/index.html index.html`{{execute}}    
+`kubectl cp mypod:/usr/share/nginx/html/index.html index.html`{{execute}}    
 
 Ein Blick in die Datei, ob das auch funtioniert hat:   
 `cat index.html`{{execute}}    
@@ -21,13 +21,13 @@ cat << EOF > index.html
 Kopierte Datei
 </title></head><body>
 <h1>Kopierte Datei</h1>
-</body>
+</body></html>
 EOF
 ```{{execute}}   
 
 ### Datei kopieren
 Hier wird die lokale Datei in den Pod kopiert.   
-`kubectl index.html mypod:/usr/share/nginx/html/index.html`{{execute}}   
+`kubectl cp index.html mypod:/usr/share/nginx/html/index.html`{{execute}}   
 
 Test, ob die Datei kopiert wurde:   
 `curl $(kubectl get pod mypod -o jsonpath="{.status.podIP}")`{{execute}}    

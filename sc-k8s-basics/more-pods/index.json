@@ -14,16 +14,20 @@
         "text": "step2.md"
       },
       {
-        "title": "Resourcen",
+        "title": "Container Image Pull Policy",
         "text": "step3.md"
       },
       {
-        "title": "Init Container",
+        "title": "Ressourcen",
         "text": "step4.md"
       },
       {
-        "title": "Liveness / Readiness",
+        "title": "Init Container",
         "text": "step5.md"
+      },
+      {
+        "title": "Liveness / Readiness",
+        "text": "step6.md"
       }
     ],
     "intro": {

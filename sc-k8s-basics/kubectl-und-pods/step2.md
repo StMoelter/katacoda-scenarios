@@ -3,7 +3,7 @@ Gerade bei der Fehlerfindung möchte man die Ausgabe des Pods auf einem Port auf
 ## Einen Pod starten
 Als Beispiel Pod wird ein Pod mit einem einzelnen nginx Container verwendet.  
 Wenn der Pod *mypod* aus dem vorherigem Beispiel noch nicht läuft:   
-`kubctl get pods`{{execute}}   
+`kubectl get pods`{{execute}}   
 Sollte dieser mit:     
 `kubectl run mypod --image=nginx`{{execute}}    
 gestartet werden.
