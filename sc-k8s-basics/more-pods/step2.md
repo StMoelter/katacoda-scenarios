@@ -2,7 +2,8 @@ Mit Labels werden den Pods einfache Schlüssel Wertepaare zugeordnet. Mit diesen
 Die Labels sind ein Hauptinstrument bei Kubernetes um die Pods und andere Resourcen zu organisieren. Labels können nicht nur auf Pods gesetzt werden. Die Benutzung auf anderen Resourcen ist analog zu Pods. In diesem Szenario werden nur Pods betrachtet.  
 
 ## Pods mit Labels erzeugen
-Es werden 4 Pods mit verschiedenen Labels erzeugt:
+Es werden 4 Pods mit verschiedenen Labels erzeugt:   
+   
 <pre class="file" data-filename="labeled-pods.yaml" data-target="replace">
 ---
 apiVersion: v1
@@ -41,8 +42,10 @@ metadata:
     tier: backend
     extra: whatever
 spec: {containers: [{name: sleep-2, image: stmoelter/alpine-sleep-user}]}
-
 </pre>   
+    
+     
+
 Diese Pods werden nun auch mit dem **apply** Kommando gestartet:   
 `kubectl apply -f labeled-pods.yaml`{{execute}}  
 und natüröich wieder getstet, ob diese auch gestartet sind:   
@@ -67,6 +70,8 @@ Die verschiedenen Labels können kombiniert werden, dadurch trennt man sie mit e
 Alle Pods die im Backend schlafen:   
 `kubectl get pods -l tier=frontend,app=sleep`{{execute}}
 `kubectl get pods -l tier=frontend,app=sleep  -o jsonpath='{.items[*].metadata.labels}`{{execute}}
+
+
 
 
 
