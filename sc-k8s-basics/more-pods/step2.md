@@ -4,42 +4,44 @@ Die Labels sind ein Hauptinstrument bei Kubernetes um die Pods und andere Resour
 ## Pods mit Labels erzeugen
 Es werden 4 Pods mit verschiedenen Labels erzeugt:
 <pre class="file" data-filename="labeled-pods.yaml" data-target="replace">
-apiVersion: apps/v1
-kind: pod
+---
+apiVersion: v1
+kind: Pod
 metadata:
-  name: labeledpod_1_1
+  name: labeledpod-1-1
   labels:
     app: server
     tier: frontend
-spec: {container: [{name: nginx_1, image: nginx}]}
+spec: {containers: [{name: nginx-1, image: nginx}]}
 ---
-apiVersion: apps/v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
-  name: labeledpod_2_1
+  name: labeledpod-2-1
   labels:
     app: server
     tier: backend
-spec: {container: [{name: nginx_2, image: nginx}]}
+spec: {containers: [{name: nginx-2, image: nginx}]}
 ---
-apiVersion: apps/v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
-  name: labeledpod_1_2
+  name: labeledpod-1-2
   labels:
     app: sleep
     tier: frontend
-spec: {container: [{name: sleep_1, image: stmoelter/alpine-sleep-user}]}
+spec: {containers: [{name: sleep-1, image: stmoelter/alpine-sleep-user}]}
 ---
-apiVersion: apps/v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
-  name: labeledpod_2_2
+  name: labeledpod-2-2
   labels:
     app: sleep
     tier: backend
     extra: whatever
-spec: {container: [{name: sleep_2, image: stmoelter/alpine-sleep-user}]}
+spec: {containers: [{name: sleep-2, image: stmoelter/alpine-sleep-user}]}
+
 </pre>   
 Diese Pods werden nun auch mit dem **apply** Kommando gestartet:   
 `kubectl apply -f labeled-pods.yaml`{{execute}}  
@@ -52,16 +54,20 @@ Auf der Kommandozeile besitzt **kubectl** die Option **-l**, um nach Labels zu s
 
 ### Testen auf Gleicheit oder Ungleichheit
 Dies ist ein einfacher Selektor, es wird geschaut, ob einem Schlüssel ein definierter Wert zugeordnet ist oder nicht:   
-`kubectl get pods -l tier=frontend`{{execute}}   
+`kubectl get pods -l tier=frontend`{{execute}} 
+`kubectl get pods -l tier=frontend -o jsonpath='{.items[*].metadata.labels}`{{execute}}   
 Dies liefert alle Pods mit dem *frontend* *tier* zurück.   
 Alternativ:   
-`kubectl get pods -l tier!=frontend`{{execute}}  
+`kubectl get pods -l tier!=frontend`{{execute}}
+`kubectl get pods -l tier!=frontend -o jsonpath='{.items[*].metadata.labels}`{{execute}}  
 gibt die pods zurück, die nicht im *frontend tier* sind.   
 
 #### Kombination
 Die verschiedenen Labels können kombiniert werden, dadurch trennt man sie mit einem Komma.   
 Alle Pods die im Backend schlafen:   
-`kubectl get pods -l tier=frontend, app=sleep`{{execute}}
+`kubectl get pods -l tier=frontend,app=sleep`{{execute}}
+`kubectl get pods -l tier=frontend,app=sleep  -o jsonpath='{.items[*].metadata.labels}`{{execute}}
+
 
 
 
