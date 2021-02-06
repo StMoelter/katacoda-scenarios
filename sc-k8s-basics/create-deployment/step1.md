@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: stmoelter/create-deployment-demo-nginx
+        image: stmoelter/create-deployment-demo-nginx:1.0
 </pre>   
 
 

@@ -21,8 +21,11 @@
         "title": "Secret einbinden",
         "text": "step4.md"
       },{
-        "title": "Resourcen löschen",
+        "title": "Deployment ändern",
         "text": "step5.md"
+      },{
+        "title": "Resourcen löschen",
+        "text": "step6.md"
       }
     ],
     "intro": {

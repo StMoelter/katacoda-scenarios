@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: stmoelter/create-deployment-demo-nginx
+        image: stmoelter/create-deployment-demo-nginx:1.0
         volumeMounts:
         - name: authvolume
           mountPath: "/etc/nginx/auth/"

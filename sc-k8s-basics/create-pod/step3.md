@@ -25,7 +25,7 @@ Wie auch im letzten Beispiel kann man jetzt die gleichen Aktionen ausführen:
      
 `kubectl describe pod mysecondpod | grep State`{{execute}}      
 
- `kubectl describe pod mysecondpod | grep IP`{{execute}}    
+`kubectl describe pod mysecondpod | grep IP`{{execute}}    
 
    
 `kubectl get pod mysecondpod -o=yaml`{{execute}}   
