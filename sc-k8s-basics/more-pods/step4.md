@@ -1,11 +1,13 @@
 Der Bereich **resources** gibt an wieviel CPU und Speicher ein Container benutzen darf, bzw initial reserviert wird.    
-Hier werden die Unterpunkte **requests** und **limits** betrachtet. Mehr Details finden sich im Link am Ende   
+Hier werden die Unterpunkte **requests** und **limits** betrachtet.   
+Mehr Details finden sich im Link am Ende.   
     
 ## limits
 Die **limits** setzen den maximalen Verbrauch an CPU, bzw. Speicher fest.  
-Als Faustregel kann man festhalten, dass der Container gestoppt wird, wenn der CPU oder Speicherverbrauch über dem gesetztem Limit liegt. Details finden in der Dokumentation, die am Ende der Seite verlinkt ist. 
+CPU und Speicher werden auf diese Werte geregelt. Das kann auch schonmal zu einem Out Of Memory Error führen, wodurch der Container durchgestartet wird. Details finden in der Dokumentation, die am Ende der Seite verlinkt ist. 
 ## requests
-Unter **requests** wird definiert wieviel Ressourcen (CPU und Speicher) initial reserviert werden. Dies ist für den Scheduler wichtig. Der Scheduler sucht einen geeigneten Node für den Pod, dieser Node muss genug freie Ressourcen wie unter **requests** definiert besitzen.   
+Unter **requests** wird definiert wieviel Ressourcen (CPU und Speicher) initial reserviert werden. Dies ist für den Scheduler wichtig. Der Scheduler sucht einen geeigneten Node für den Pod, dieser Node muss genug freie Ressourcen wie unter **requests** definiert besitzen.  
+Gibt es mehrere Container in einem Pod, so wird hier die Summe über alle COntainer benutzt.    
 Benutzt ein Container mehr Speicher als unter **requests** angegeben, so kann der ganze Pod von dem Node entfernt werden, wenn der Node zu wenig Ressourcen hat. In diesem Falle wird der Pod auf einem anderen Node ausgelagert und wieder gestartet, in so fern es einen Node gibt, der die Anforderungen von **request** erfüllt.   
 Ist **requests** nicht gesetzt so wird diese mit **limits** gleich gesetzt. Die Werte für **limits** sind i.d.R. viel höher.    
      
@@ -55,11 +57,13 @@ Sicherstellen, dass der Pod gestartet wurde:
 
 Aktueller CPU Verbrauch:   
 `kubectl top pod cpu`{{execute}}   
+     
+`k exec -it cpu -- top`{{execute}}       
 
 Details des Pods:   
 `kubectl describe pod cpu`{{execute}}   
 
-### CPU Request ist höher als vorhandene Ressourchen auf den Nodes
+### CPU Request ist höher als vorhandene Ressourcen auf den Nodes
     
 <pre class="file" data-filename="cpu.yaml" data-target="replace">   
 apiVersion: v1
@@ -73,7 +77,7 @@ spec:
     command:
         - stress-ng
         - --cpu
-        - 2
+        - "5"
     resources:
       limits:
         cpu: 100
@@ -86,8 +90,11 @@ Status des Pods ansehen:
 `kubectl get pod cpu`{{execute}}    
 
 Details des Pods:   
-`kubectl describe pod cpu`{{execute}}   
+`kubectl describe pod cpu`{{execute}}  
 
+Ressourcen freigeben:   
+`kubectl delete pod cpu`{{execute}}   
+    
 ### Speicher geht über das Limit
     
 <pre class="file" data-filename="memory.yaml" data-target="replace">   
@@ -102,22 +109,21 @@ spec:
     command:
         - stress-ng
         - --vm
-        - 1
+        - "1"
         - --vm-bytes
         - 1G
     resources:
       limits:
-        cpu: 100M
+        memory: 100M
       requests:
-        cpu: 20M
+        memory: 20m
 </pre>   
-   
+    
 `kubectl apply -f memory.yaml`{{execute}}   
-Sicherstellen, dass der Pod gestartet wurde:      
+Status des Pods ansehen:      
 `kubectl get pod memory`{{execute}}  
 
-Aktueller CPU Verbrauch:   
-`kubectl top pod memory`{{execute}}   
+Der Pod kann nicht ge   
 
 Details des Pods:   
 `kubectl describe pod memory`{{execute}}   

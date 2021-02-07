@@ -10,6 +10,9 @@ dabein diesem Beispiel wird das offizielle nginx Image der letzten Version vom D
 
 Die Übersicht über die Pods wird jetzt einen laufenden Pod anzeigen:      
 `kubectl get pods`{{execute}}   
+oder detailierter:   
+`kubectl get pods -o wide`{{execute}}   
+   
 ## Pod beschreiben lassen
 Details über den Pod wird mit:   
 `kubectl describe pod myfirstpod`{{execute}}   
