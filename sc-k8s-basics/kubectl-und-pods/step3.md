@@ -1,5 +1,5 @@
 Der Pod aus dem letzten Beispiel sollte noch laufen:  
-`kubctl get pods`{{execute}}   
+`kubectl get pods`{{execute}}   
 Ist die Liste leer den Pod starten mit:         
 `kubectl run mypod --image=nginx`{{execute}}   
 

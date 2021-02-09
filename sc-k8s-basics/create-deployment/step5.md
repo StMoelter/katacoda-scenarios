@@ -35,7 +35,7 @@ spec:
 Wichtig ist hier also **image: stmoelter/create-deployment-demo-nginx:2.0**   
 
 Das wird gestartet mit:  
-`kubectl apply -f deployment.yaml`  
+`kubectl apply -f deployment.yaml`{{execute}}  
 
 Das sollte nun ausgerollt sein:
 `k get pods`{{execute}}   

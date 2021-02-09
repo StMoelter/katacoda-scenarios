@@ -26,7 +26,7 @@ spec:
     command:
     - wget
     - "-O"
-    - "/work-dir/index.html"
+    - "/init-dir/index.html"
     - http://info.cern.ch
     volumeMounts:
     - name: workdir
@@ -44,7 +44,7 @@ Testen ob der Container läuft:
 `k get pod init`{{execute}}    
     
 Ausgabe der index.html:   
-`curl $(kubectl get pod myfirstpod -o jsonpath="{.status.podIP})`{{execute}}
+`curl $(kubectl get pod init -o jsonpath="{.status.podIP}")`{{execute}}
 
 ## resources und Init Container
 Als **request** und **init** Parameter werden die jeweiliger Maximalwerte vun **cpu**, bzw. **memory** benutzt.   

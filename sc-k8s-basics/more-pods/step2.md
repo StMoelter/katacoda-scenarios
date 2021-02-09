@@ -53,7 +53,7 @@ und natüröich wieder getstet, ob diese auch gestartet sind:
 `kubectl get pods`{{execute}}   
    
 ## Pods selektieren
-Es gibt verschiedene möglichkeiten Pods zu selektieren. Die kann in einer **.yaml** Datei geschehen, um z.B. Pods wür ein Deployment zu selektieren. Hier wird nur die Selektion auf der KOmmandozeile im **get pods** Kommando betrachtet. Die **.yaml** hat kennt die gleichen Selektoren.   
+Es gibt verschiedene möglichkeiten Pods zu selektieren. Die kann in einer **.yaml** Datei geschehen, um z.B. Pods für ein Deployment zu selektieren. Hier wird nur die Selektion auf der Kommandozeile im **get pods** Kommando betrachtet. Die **.yaml** hat kennt die gleichen Selektoren.   
 Auf der Kommandozeile besitzt **kubectl** die Option **-l**, um nach Labels zu selektieren.   
 
 ### Testen auf Gleicheit oder Ungleichheit
@@ -81,7 +81,7 @@ Alle Pods die im Backend schlafen:
 `kubectl get pods -l tier=frontend,app=sleep  -o jsonpath='{.items[*].metadata.labels}'`{{execute}}   
    
 ### Testen ob der Label in einer Liste ist
-Beim kombinierten Test werden die Bedingungen mit **und** verknüpft. Möchte man ein **oder** haben, so wird dies ermöglicht in dem getestst wird, ob das Label in einer Liste ist, ähnlich wie der **IN(.., ..)** Operator in SQL.   
+Hier wird getestet, ob das Label in einer Liste ist, ähnlich wie der **IN(.., ..)** Operator in SQL.   
     
 `kubectl get pods -l 'tier in (frontend, backend)'`{{execute}}   
       
@@ -113,7 +113,7 @@ bzw.
 Es werden nun auch die Pods ausgebenen, die das Label nicht gesetzt haben.   
 Die gewünschte Ausgabe erhält man durch eine Kombination mit der Existenzprüfung:   
      
-`kubectl get pods -l 'extra,extra notin (whatelse)'`{{execute}}
+`kubectl get pods -l 'extra, extra notin (whatelse)'`{{execute}}
 
 ## Weitere Infos
 [https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)

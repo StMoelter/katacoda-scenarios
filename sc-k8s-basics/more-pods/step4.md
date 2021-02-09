@@ -41,9 +41,9 @@ spec:
   - name: cpu
     image: stmoelter/alpine-sleep-user
     command:
-        - stress-ng
-        - --cpu
-        - 2
+    - stress-ng
+    - --cpu
+    - "2"
     resources:
       limits:
         cpu: 250m
@@ -85,6 +85,8 @@ spec:
         cpu: 100
 </pre>   
    
+`kubectl delete pod cpu`{{execute}}   
+
 `kubectl apply -f cpu.yaml`{{execute}}   
 Status des Pods ansehen:      
 `kubectl get pod cpu`{{execute}}    
@@ -94,40 +96,6 @@ Details des Pods:
 
 Ressourcen freigeben:   
 `kubectl delete pod cpu`{{execute}}   
-    
-### Speicher geht über das Limit
-    
-<pre class="file" data-filename="memory.yaml" data-target="replace">   
-apiVersion: v1
-kind: Pod
-metadata:
-  name: memory
-spec:
-  containers:
-  - name: memory
-    image: stmoelter/alpine-sleep-user
-    command:
-        - stress-ng
-        - --vm
-        - "1"
-        - --vm-bytes
-        - 1G
-    resources:
-      limits:
-        memory: 100M
-      requests:
-        memory: 20m
-</pre>   
-    
-`kubectl apply -f memory.yaml`{{execute}}   
-     
-Status des Pods ansehen:      
-`kubectl get pod memory`{{execute}}  
-
-Der Pod kann nicht ge   
-
-Details des Pods:   
-`kubectl describe pod memory`{{execute}}   
 
 
 ## Weitere Dokumentation
