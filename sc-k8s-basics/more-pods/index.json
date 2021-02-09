@@ -24,10 +24,6 @@
       {
         "title": "Init Container",
         "text": "step5.md"
-      },
-      {
-        "title": "Liveness / Readiness / StartUp",
-        "text": "step6.md"
       }
     ],
     "intro": {
