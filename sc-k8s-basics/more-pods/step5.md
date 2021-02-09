@@ -24,10 +24,10 @@ spec:
   - name: install
     image: busybox
     command:
-    - echo
-    - '<html><head><title>Init</title></head><body><h1>Init</h1></body></html>' 
-    - ">"
-    - "/init-dir/index.html"
+    - wget
+    - "-O"
+    - "/work-dir/index.html"
+    - http://info.cern.ch
     volumeMounts:
     - name: workdir
       mountPath: "/init-dir"
@@ -50,5 +50,8 @@ Ausgabe der index.html:
 Als **request** und **init** Parameter werden die jeweiliger Maximalwerte vun **cpu**, bzw. **memory** benutzt.   
 In die Berechnung der Maximalwerte gehen die einzelnen Werte jedes Init-Container, sowie die Summe über alle Container ein.  
 
-
+## Details
+[https://kubernetes.io/docs/concepts/workloads/pods/init-containers/](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)   
+    
+[https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/)   
 

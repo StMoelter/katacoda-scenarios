@@ -11,7 +11,7 @@ Gibt es mehrere Container in einem Pod, so wird hier die Summe über alle COntai
 Benutzt ein Container mehr Speicher als unter **requests** angegeben, so kann der ganze Pod von dem Node entfernt werden, wenn der Node zu wenig Ressourcen hat. In diesem Falle wird der Pod auf einem anderen Node ausgelagert und wieder gestartet, in so fern es einen Node gibt, der die Anforderungen von **request** erfüllt.   
 Ist **requests** nicht gesetzt so wird diese mit **limits** gleich gesetzt. Die Werte für **limits** sind i.d.R. viel höher.    
      
-Für Entwicklungssysteme oder zum Testen der K8s konfiguration macht es Sinn kleine Requests zu wählen. Dadurch können viele Entwicklungsumgebungen auf weniger Nodes laufen. Auf Produktionssystemen kann es Sinn machen die Requests hoch zu setzen, damit der Node auch unter Last genug Resourcen besitzt.   
+Für Entwicklungssysteme oder zum Testen der K8s Konfiguration macht es Sinn kleine Requests zu wählen. Dadurch können viele Entwicklungsumgebungen auf weniger Nodes laufen. Auf Produktionssystemen kann es Sinn machen die Requests hochzusetzen, damit der Node auch unter Last genug Resourcen besitzt.   
    
 ## CPU 
 Der Parameter CPU wird in Einheiten von einer CPU angebenen. Also eine '1' beudeutet, dass eine CPU, bzw. Hyperthread benutzt werden kann. Da COntainer evtl. weniger Leistung brauchen gibt man die EInheiten auch im milli CPU mit der Einheit _m_ an. Eine ganze CPU wird als:   
@@ -120,6 +120,7 @@ spec:
 </pre>   
     
 `kubectl apply -f memory.yaml`{{execute}}   
+     
 Status des Pods ansehen:      
 `kubectl get pod memory`{{execute}}  
 
@@ -127,11 +128,6 @@ Der Pod kann nicht ge
 
 Details des Pods:   
 `kubectl describe pod memory`{{execute}}   
-
-
-
-
-
 
 
 ## Weitere Dokumentation

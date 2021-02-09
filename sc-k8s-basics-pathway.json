@@ -1,11 +1,11 @@
 {
   "title": "Kubernetes Basics",
-  "description": "Basis Kubernetes Kurs für sum.cumo",
+  "description": "Basis Kubernetes Kurs",
   "courses": [
     {
       "course_id": "create-pod",
       "title": "Erstelle einen Pod in Kubernetes",
-      "description": "Einen Pod mithilfe von kubectl und einer .yaml Datei erstellen."
+      "description": "Einen Pod mit Hilfe von kubectl und einer .yaml Datei erstellen."
     }, {
       "course_id": "kubectl-und-pods",
       "title": "Hilfreiche Kommandos für Pod",
@@ -17,8 +17,7 @@
     },{
       "course_id": "create-deployment",
       "title": "Erstelle ein Deployment in Kubernetes",
-      "description": "Ein Deployment mithilfe erstellen und ein Service sowie ein Secret einbinden"
+      "description": "Ein Deployment erstellen und ein Service sowie ein Secret einbinden"
     }
-
   ]
 }
